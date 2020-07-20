@@ -1,6 +1,6 @@
 import {GetStaticProps} from 'next';
-import styles from './index.module.scss';
-import Asterik from './asterik.svg';
+import styles from './assets/index.module.scss';
+import Asterik from './assets/asterik.svg';
 import Carousel from '../components/Carousel';
 import {Quote} from '../components/QuoteBlock';
 import Button from '../components/Button';
@@ -31,9 +31,7 @@ const Home: FC<{sections: [Section]}> = ({sections}) => {
 };
 
 export const getStaticProps: GetStaticProps = async() => {
-	const domain = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : 'https://ua5.vercel.app';
-
-	const sections = await fetch(`${domain}/data.json`).
+	const sections = await fetch('https://raw.githubusercontent.com/UseAllFive/dev-challenges/frontend/data.json').
 		then((response) => {
 			return response.json();
 		});
