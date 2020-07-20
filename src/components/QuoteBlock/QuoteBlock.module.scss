@@ -1,0 +1,36 @@
+@import '../../global-styles/variables';
+@import '../../global-styles/fonts';
+
+.blockquote {
+	margin: 0 auto;
+	padding: 0 125px;
+	max-width: 1130px + (125px * 2);
+
+	$min_width: 320px;
+	$max_width: 1200px;
+	$min_font: 18px;
+	$max_font: 72px;
+	@include fluid-type($min_width, $max_width, $min_font, $max_font);
+
+	@media screen and (max-width: 690px) {
+		padding: 0 1em;
+	}
+}
+
+.attribution {
+	white-space: pre-line;
+	font-size: .77em;
+
+	&:before {
+		content: '';
+		display: block;
+		width: 75px;
+		height: 2px;
+		background: currentColor;
+		margin: 0 auto 1em;
+	}
+}
+
+.source {
+	display: block;
+}

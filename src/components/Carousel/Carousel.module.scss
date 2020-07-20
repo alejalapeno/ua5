@@ -1,0 +1,39 @@
+@import '../../global-styles/variables';
+
+.carousel {
+	outline: none;
+	overflow: hidden;
+	max-width: 1500px;
+	margin: 0 auto;
+
+	/* Everything below global can style the responsive-carousel scoped to this component */
+	:global {
+		.carousel-slider {
+			position: relative;
+		}
+
+		.slider-wrapper {
+			width: 100%;
+		}
+
+		.slider {
+			display: flex;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.slide {
+			min-width: 100%;
+			max-width: 100%;
+		}
+
+		.control-dots {
+			margin: 64px 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			justify-content: center;
+		}
+	}
+}

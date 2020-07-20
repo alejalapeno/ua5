@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'fonts';
+@import 'resets';
+
+@mixin main-font-stack {
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+	src: url("/CircularStd-Book.ttf") format("truetype");
+}
+
+html {
+	background: $color-background;
+}
+
+body {
+	@include main-font-stack;
+	color: $color-main;
+	font-size: 16px;
+	text-align: center;
+
+	// @media screen and (max-width: 690px) {
+	// 	padding-left: 1rem;
+	// 	padding-right: 1rem;
+	// }
+}
+
+::selection {
+	background: $color-accent;
+	text-shadow: 1px 1px $color-background;
+}

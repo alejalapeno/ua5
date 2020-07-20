@@ -1,0 +1,23 @@
+@import '../../../global-styles/variables';
+
+.pip {
+	display: block;
+	-webkit-button-style: none;
+	background: lighten($color: $color-main, $amount: 40);
+	border: 0;
+	padding: 0;
+	margin: 12px;
+	height: 16px;
+	width: 16px;
+	border-radius: 100%;
+	cursor: pointer;
+	outline: none;
+	
+	&:focus {
+		box-shadow: 0 0 0 2px $color-accent;
+	}
+}
+
+.-selected {
+	background: $color-main;
+}
