@@ -1,0 +1,22 @@
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-margin($min-vw, $max-vw, $min-margin, $max-margin) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-margin);
+	$u4: unit($max-margin);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			margin: $min-margin;
+			@media screen and (min-width: $min-vw) {
+				margin: calc(#{$min-margin} + #{strip-unit($max-margin - $min-margin)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})) 0;
+			}
+			@media screen and (min-width: $max-vw) {
+				margin: $max-margin 0;
+			}
+		}
+	}
+}
